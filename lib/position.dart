@@ -37,13 +37,12 @@ class MainApp extends StatelessWidget {
 }
 
 class PhoneWidget extends StatelessWidget {
-  const PhoneWidget(
+  PhoneWidget(
       {super.key,
       this.name = "Standart name",
       this.model = "unknown",
       this.price = 0,
       this.screenHertz = 60});
-
   final String name;
   final int price;
   final String model;
@@ -51,6 +50,8 @@ class PhoneWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<PhoneWidget> wigslist = [];
+
     return Expanded(
         child: Container(
       width: 100,
@@ -58,8 +59,9 @@ class PhoneWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(name),
+          Text(phonesList[0].name),
           Text(model),
+          Image(image: AssetImage(phonesList[0].image))
         ],
       ),
     ));
