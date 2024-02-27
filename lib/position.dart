@@ -18,18 +18,20 @@ class MainApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.grey,
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[PhoneWidget(), PhoneWidget()],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[PhoneWidget(), PhoneWidget()],
-            ),
-          ],
+        body: Container(
+          color: Colors.grey,
+          child: ListView.builder(
+            itemCount: phonesList.length,
+            itemBuilder: (BuildContext context, index) {
+              return PhoneWidget(
+                name: phonesList[index].name,
+                model: phonesList[index].model,
+                price: phonesList[index].price,
+                screenHertz: phonesList[index].screenHertz,
+                image: phonesList[index].image,
+              );
+            },
+          ),
         ),
       ),
     );
@@ -42,26 +44,34 @@ class PhoneWidget extends StatelessWidget {
       this.name = "Standart name",
       this.model = "unknown",
       this.price = 0,
-      this.screenHertz = 60});
+      this.screenHertz = 60,
+      this.image = 'assets/images/satandart.png'});
   final String name;
   final int price;
   final String model;
   final int screenHertz;
-
+  final String image;
   @override
   Widget build(BuildContext context) {
-    List<PhoneWidget> wigslist = [];
-
     return Expanded(
         child: Container(
-      width: 100,
-      height: 100,
+      height: 300,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(phonesList[0].name),
-          Text(model),
-          Image(image: AssetImage(phonesList[0].image))
+          Text(
+            this.name,
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+          ),
+          Container(
+            decoration: BoxDecoration(color: Colors.grey),
+            height: 150,
+            width: 150,
+            child: Image(image: AssetImage(this.image)),
+          ),
+          Text('Стоимость: ${this.price}'),
+          Text('Модель: ${this.model}'),
+          Text('Герцовка экрана: ${this.screenHertz}')
         ],
       ),
     ));

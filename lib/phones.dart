@@ -23,4 +23,5 @@ List<phone> phonesList = [
   phone("Huawei", 40000, "p30 pro", 120, 'assets/images/huawei.jpg'),
   phone("Oppo", 30000, "Find X7", 120, 'assets/images/oppo.jpg'),
   phone("Realme", 35000, "11 pro plus", 60, 'assets/images/realme.jpg'),
+  phone("ST", 1000000, "qweqweqwe", 2222, 'assets/images/satandart.png'),
 ];

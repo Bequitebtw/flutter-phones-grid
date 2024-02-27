@@ -18,14 +18,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/honor.jpg
-    - assets/images/huawei.jpg
-    - assets/images/iphone.jpg
-    - assets/images/meizu.jpg
-    - assets/images/nokia3310.jpg
-    - assets/images/onePlus.jpg
-    - assets/images/oppo.jpg
-    - assets/images/realme.jpg
-    - assets/images/samsung.jpg
-    - assets/images/xiaomi.jpg
-    
+    - assets/images
